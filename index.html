@@ -18,11 +18,22 @@
         <p class="school-address">BHANIYAWLA, JOLLYGRANT, DEHRADUN (248140)</p>
     </header>
     <main>
-        <section class="about-section">
-            <h2>About Learning World</h2>
-            <p>The Learning World School is an English medium primary school (U.K. Government recognized), with Registration No. UK0600812022009540. The school officially commenced operations on 1st April 2025.</p>
-            <p>Initially, it was functioning under the name Kidzee Bhaniyawala from 6th February 2020 to 31st March 2025 as a franchise of the Zee Group.</p>
-        </section>
+        <div class="about-notice-row">
+            <section class="about-section">
+                <h2>About Learning World</h2>
+                <p>The Learning World School is an English medium primary school (U.K. Government recognized), with Registration No. UK0600812022009540. The school officially commenced operations on 1st April 2025.</p>
+                <p>Initially, it was functioning under the name Kidzee Bhaniyawala from 6th February 2020 to 31st March 2025 as a franchise of the Zee Group.</p>
+            </section>
+            <div class="notice-board">
+                <div class="notice-board-header">Notice Board</div>
+                <div class="notice-board-content">
+                    <span class="admissions-main">ADMISSIONS</span><br>
+                    <span class="admissions-open-small">OPEN</span><br>
+                    <span class="admissions-classes">NURSERY TO CLASS V</span>
+                </div>
+                <button class="notice-board-btn">VIEW ALL</button>
+            </div>
+        </div>
         <section class="icon-section">
             <div class="icon-card">
                 <img src="activities1.jpg.jpg" alt="Activities" class="icon-photo">
@@ -141,7 +152,7 @@ Our students graduate with the skills, mind sets and qualities that will best eq
             <h2>Gallery</h2>
             <div class="gallery-options">
                 <a href="#" class="gallery-btn" onclick="document.getElementById('photo-gallery-modal').style.display='block';document.getElementById('gallery-modal').style.display='none';return false;">Photo Gallery</a>
-                <a href="#" class="gallery-btn">Video Gallery</a>
+                <a href="#" class="gallery-btn" onclick="document.getElementById('video-gallery-modal').style.display='block';document.getElementById('gallery-modal').style.display='none';return false;">Video Gallery</a>
             </div>
         </div>
     </div>
@@ -160,6 +171,16 @@ Our students graduate with the skills, mind sets and qualities that will best eq
                 <img src="gallery8.jpg.jpg" alt="Gallery Photo 8" class="gallery-photo" onclick="openLightbox(this)">
                 <img src="gallery9.jpg.jpg" alt="Gallery Photo 9" class="gallery-photo" onclick="openLightbox(this)">
             </div>
+        </div>
+    </div>
+    <div id="video-gallery-modal" class="directors-modal">
+        <div class="directors-modal-content video-gallery-content">
+            <span class="close-modal" onclick="closeVideoGallery()">&times;</span>
+            <h2>Video Gallery</h2>
+            <video controls controlsList="nodownload" width="100%" style="max-width:600px; border-radius:12px; box-shadow:0 2px 8px rgba(33,150,195,0.10); background:#000;" poster="">
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -203,16 +224,21 @@ Our students graduate with the skills, mind sets and qualities that will best eq
     function nextLightbox() {
         showLightboxImage(currentGalleryIndex + 1);
     }
+    function closeVideoGallery() {
+        var modal = document.getElementById('video-gallery-modal');
+        var video = modal.querySelector('video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+        modal.style.display = 'none';
+    }
     </script>
     <div class="contact-details contact-details-inline">
         <span class="contact-label">Contact:</span>
         <span class="contact-item"><i class="fas fa-phone-alt"></i> 9634627907, 9761147007</span>
         <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:thelearningworldschool25@gmail.com">thelearningworldschool25@gmail.com</a></span>
         <span class="contact-item"><i class="fas fa-building"></i> <strong>Office:</strong> Preet vihar lane no7, Bhaniyawala, Dehradun</span>
-    </div>
-    <div class="social-footer-vertical">
-        <a href="https://www.facebook.com/share/16eqx9HE5J/?mibextid=wwXIfr" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/thelearningworldschool_?igsh=eWdoc282eXh3cw==" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
     <footer class="footer">
         <p>&copy; 2024 THE LEARNING WORLD SCHOOL. All rights reserved.</p>
