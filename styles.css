@@ -160,6 +160,26 @@ body::before {
     margin: 2.5rem auto 0 auto;
 }
 
+@media (max-width: 768px) {
+    .about-notice-row {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .about-section {
+        width: 100%;
+        margin: 0;
+        order: 1;
+    }
+    
+    .notice-board {
+        width: 100%;
+        margin: 0 auto;
+        order: 2;
+    }
+}
+
 .contact-details {
     position: static;
     background: rgba(255,255,255,0.92);
