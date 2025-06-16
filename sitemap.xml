@@ -1,39 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://thelearningworldschool.com/</loc>
         <lastmod>2024-03-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/logo.png</image:loc>
+            <image:title>The Learning World School Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/corner-logo.png</image:loc>
+            <image:title>The Learning World School Corner Logo</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://thelearningworldschool.com/gallery</loc>
         <lastmod>2024-03-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/gallery1.jpg</image:loc>
+            <image:title>School Gallery Image 1</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/gallery2.jpg</image:loc>
+            <image:title>School Gallery Image 2</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://thelearningworldschool.com/admissions</loc>
         <lastmod>2024-03-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/admissions1.jpg</image:loc>
+            <image:title>School Admissions</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://thelearningworldschool.com/academics</loc>
         <lastmod>2024-03-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/academics1.jpg</image:loc>
+            <image:title>School Academics</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://thelearningworldschool.com/activities</loc>
         <lastmod>2024-03-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/activities1.jpg</image:loc>
+            <image:title>School Activities</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://thelearningworldschool.com/transport</loc>
         <lastmod>2024-03-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://thelearningworldschool.com/assets/images/vans.jpg</image:loc>
+            <image:title>School Transport</image:title>
+        </image:image>
     </url>
 </urlset> 

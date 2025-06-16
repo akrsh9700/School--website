@@ -27,7 +27,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('school-building.jpg.jpg') center center/cover no-repeat;
+    background: url('assets/images/school-building.jpg') center center/cover no-repeat;
     opacity: 0.13;
     z-index: -1;
     pointer-events: none;
