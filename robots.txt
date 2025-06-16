@@ -14,7 +14,7 @@ Disallow: /temp/
 Disallow: /draft/
 
 # Sitemap location
-Sitemap: https://thelearningworldschool.com/sitemap.xml
+Sitemap: https://www.thelearningworldschool.in/sitemap.xml
 
 # Crawl-delay for all bots
 Crawl-delay: 10 
