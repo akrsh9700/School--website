@@ -1,0 +1,20 @@
+# robots.txt for The Learning World School
+User-agent: *
+Allow: /
+Allow: /gallery
+Allow: /admissions
+Allow: /academics
+Allow: /activities
+Allow: /transport
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /draft/
+
+# Sitemap location
+Sitemap: https://thelearningworldschool.com/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 10 

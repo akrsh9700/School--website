@@ -1,9 +1,23 @@
+:root {
+    --primary-color: #2196c3;
+    --secondary-color: #f9a825;
+    --text-color: #444;
+    --background-color: #f7fafd;
+    --card-shadow: 0 4px 16px rgba(33,150,195,0.08);
+    --hover-shadow: 0 8px 24px rgba(33,150,195,0.16);
+    --border-radius: 16px;
+    --spacing-unit: 1rem;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
-    background: #f7fafd;
-    color: #222;
+    background: var(--background-color);
+    color: var(--text-color);
     position: relative;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
@@ -19,57 +33,76 @@ body::before {
     pointer-events: none;
 }
 
+/* Responsive typography */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
 .header {
     text-align: center;
     background: #fff;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: clamp(1rem, 5vw, 2rem) clamp(0.5rem, 3vw, 1rem);
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     position: relative;
 }
 
 .school-logo {
-    max-width: 320px;
+    max-width: min(320px, 90%);
     width: 100%;
-    margin-bottom: 1rem;
+    height: auto;
+    margin-bottom: clamp(0.5rem, 3vw, 1rem);
 }
 
 .school-title {
-    font-size: 2.5rem;
-    color: #2196c3;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: var(--primary-color);
     margin: 0.2rem 0 0.5rem 0;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 .school-address {
-    font-size: 1.1rem;
-    color: #f9a825;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: var(--secondary-color);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .icon-section {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 3rem auto;
-    max-width: 900px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: clamp(2rem, 5vw, 3rem) auto;
+    max-width: 1200px;
+    padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 .icon-card {
     background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(33,150,195,0.08);
-    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: clamp(1.5rem, 4vw, 2rem);
     text-align: center;
-    width: 260px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.icon-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 24px rgba(33,150,195,0.16);
+.icon-card:hover, .icon-card:focus {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--hover-shadow);
 }
 
 .icon-card i {
@@ -104,27 +137,14 @@ body::before {
 
 .van-photo {
     width: 100%;
-    max-width: 240px;
+    height: clamp(140px, 20vw, 160px);
+    object-fit: cover;
     border-radius: 12px;
     margin-bottom: 1rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 2px 8px rgba(33,150,195,0.10);
-    object-fit: cover;
-    height: 160px;
-}
-
-@media (max-width: 900px) {
-    .icon-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    .icon-card {
-        width: 90%;
-        max-width: 350px;
-    }
 }
 
 .about-section {
@@ -213,29 +233,29 @@ body::before {
 
 .icon-photo {
     width: 100%;
-    max-width: 240px;
+    height: clamp(140px, 20vw, 160px);
+    object-fit: cover;
     border-radius: 12px;
     margin-bottom: 1rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 2px 8px rgba(33,150,195,0.10);
-    object-fit: cover;
-    height: 160px;
 }
 
 .corner-logo {
     position: fixed;
-    top: 25px;
-    right: 20px;
-    width: 100px;
-    height: 90px;
+    top: clamp(8px, 2vw, 25px);
+    right: clamp(8px, 2vw, 20px);
+    width: clamp(48px, 8vw, 100px);
+    height: auto;
+    aspect-ratio: 1;
     object-fit: contain;
     z-index: 101;
     background: rgba(255,255,255,0.85);
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(33,150,195,0.13);
-    padding: 6px;
+    padding: clamp(3px, 1vw, 6px);
 }
 
 @media (max-width: 600px) {
@@ -316,14 +336,15 @@ body::before {
 }
 
 .directors-modal-content {
+    width: min(90%, 800px);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: clamp(1rem, 4vw, 2rem);
+    margin: 2rem auto;
     background: #fff;
-    margin: 3.5rem auto;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
-    border-radius: 14px;
-    max-width: 520px;
-    box-shadow: 0 8px 32px rgba(33,150,195,0.18);
+    border-radius: var(--border-radius);
     position: relative;
-    text-align: center;
+    box-shadow: var(--card-shadow);
 }
 
 .directors-modal-content h2 {
@@ -383,12 +404,13 @@ body::before {
 @media (max-width: 900px) {
     .message-row {
         flex-direction: column;
-        gap: 1.5rem;
-        max-width: 98vw;
+        gap: clamp(1rem, 3vw, 2rem);
+        padding: 0 clamp(1rem, 3vw, 2rem);
     }
     .message-row .directors-message-card,
     .message-row .principals-message-card {
-        max-width: 98vw;
+        width: 100%;
+        max-width: 500px;
         margin: 0 auto;
     }
 }
@@ -436,22 +458,18 @@ body::before {
 
 .photo-gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(0.5rem, 2vw, 1rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
 }
 
 .gallery-photo {
     width: 100%;
-    max-width: 320px;
-    height: 200px;
+    height: clamp(200px, 30vw, 300px);
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(33,150,195,0.10);
-    background: #f7fafd;
-    margin: 0 auto;
-    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .gallery-icon-image {
@@ -469,18 +487,15 @@ body::before {
 
 .contact-details-inline {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2.2rem;
-    background: repeating-linear-gradient(135deg, #e3f2fd 0 18px, #fff 18px 36px);
-    border-radius: 18px;
-    box-shadow: 0 2px 8px rgba(33,150,195,0.10);
-    padding: 1.2rem 2rem;
-    margin: 2.5rem auto 1.5rem auto;
-    font-size: 1.08rem;
-    color: #1976d2;
-    max-width: 1100px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
+    background: rgba(255,255,255,0.92);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin: clamp(1rem, 3vw, 2.5rem) auto;
+    max-width: 1200px;
 }
 
 .contact-details-inline .contact-label {
@@ -506,19 +521,6 @@ body::before {
 .contact-details-inline a {
     color: #1976d2;
     text-decoration: underline;
-}
-
-@media (max-width: 900px) {
-    .contact-details-inline {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.7rem;
-        padding: 1.2rem 1rem;
-        font-size: 1rem;
-    }
-    .contact-details-inline .contact-label {
-        margin-bottom: 0.5rem;
-    }
 }
 
 .social-stickers {
@@ -651,25 +653,27 @@ body::before {
     color: #f9c97b;
 }
 @media (max-width: 700px) {
+    .lightbox {
+        padding: 1rem;
+    }
+    
     .lightbox-close {
         top: 1.2rem;
         right: 1.2rem;
         font-size: 2.2rem;
     }
     .lightbox-img {
-        max-width: 98vw;
-        max-height: 60vh;
+        max-width: 95vw;
+        max-height: 80vh;
     }
 }
 
 .notice-board {
     background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(33,150,195,0.08);
-    padding: 1.8rem;
-    text-align: center;
-    min-width: 280px;
-    max-width: 320px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    width: min(350px, 90%);
     margin: 0 auto;
 }
 
@@ -853,22 +857,19 @@ body::before {
 }
 @media (max-width: 900px) {
     .video-gallery-content {
-        max-width: 98vw;
-        padding: 1rem 0.2rem 1rem 0.2rem;
+        padding: 1rem;
     }
+    
     #video-gallery-modal video {
-        max-width: 98vw;
-        max-height: 40vh;
+        max-width: 95vw;
+        max-height: 70vh;
     }
 }
 
 .faq-section {
     max-width: 800px;
-    margin: 2.5rem auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(33,150,195,0.10);
-    padding: 2rem 1.5rem;
+    margin: clamp(2rem, 5vw, 3rem) auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
 }
 .faq-section h2 {
     color: #2196c3;
@@ -877,7 +878,11 @@ body::before {
     font-weight: 700;
 }
 .faq-item {
-    margin-bottom: 1.2rem;
+    background: #fff;
+    border-radius: var(--border-radius);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+    box-shadow: var(--card-shadow);
 }
 .faq-item h3 {
     font-size: 1.15rem;
@@ -889,4 +894,19 @@ body::before {
     color: #444;
     font-size: 1.05rem;
     margin: 0 0 0.5rem 0;
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) {
+    .icon-card:hover {
+        transform: none;
+    }
+    
+    .icon-card:active {
+        transform: scale(0.98);
+    }
+    
+    .view-more-btn:active {
+        transform: scale(0.95);
+    }
 } 
