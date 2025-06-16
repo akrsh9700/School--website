@@ -82,22 +82,28 @@ html {
 
 .icon-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
-    margin: clamp(2rem, 5vw, 3rem) auto;
-    max-width: 1200px;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
 }
 
 .icon-card {
     background: #fff;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
-    padding: clamp(1.5rem, 4vw, 2rem);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     text-align: center;
     width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -webkit-tap-highlight-color: transparent;
+    min-width: 0;
+    max-width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .icon-card:hover, .icon-card:focus {
@@ -909,4 +915,33 @@ html {
     .view-more-btn:active {
         transform: scale(0.95);
     }
+}
+
+@media (max-width: 1024px) {
+    .icon-section {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 700px) {
+    .icon-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 98vw;
+        padding: 0 0.5rem;
+    }
+    .icon-card:last-child:nth-child(odd) {
+        grid-column: auto;
+        justify-self: stretch;
+        max-width: 100%;
+    }
+}
+
+/* Center the last card if odd number of cards */
+.icon-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 500px;
 } 
